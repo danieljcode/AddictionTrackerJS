@@ -22,7 +22,7 @@ body {
 
 * {
   font-family: 'Lato', Helvetica, sans-serif;
-  color: #333447;
+  color: white;
   line-height: 1.5;
 }
 
@@ -129,7 +129,7 @@ p {
 
 .col-3-sm {
   width: 21%;
-  background-color: green;
+  background-color: #576574;
   height: 100vh;
 }
 
@@ -196,7 +196,7 @@ p {
 
   .col-3 {
     width: 21%;
-    background-color: green;
+    background-color: #576574;
     height: 100vh;
   }
 
