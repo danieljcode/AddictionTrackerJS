@@ -4,6 +4,8 @@ const container = document.getElementById("container");
 const nameInput = document.getElementById("nameIn");
 const addictionInput = document.getElementById("addictionIn");
 
+var dataHasBeenEntered = false;
+
 function CheckForSavedData(){
 //This function checks if there is data saved in localStorage and redirects the user if there is
 
@@ -23,21 +25,32 @@ function CheckForSavedData(){
 function CheckForBlanks(){
 
     if(nameInput.value == ""){
-    
+        dataHasBeenEntered = false;
 
+        nameInput.classList.toggle("warn"); //Setting the class list to include warn which I will use to style the input red in CSS
 
+    }else{
+
+        addictionInput.classList.toggle("yes"); //Setting the class list to have yes which will be green in CSS
     }
 
-    if(addictionIn.value == ""){
+    if(addictionInput.value == ""){
+        dataHasBeenEntered = false;
 
-
+        addictionInput.classList.toggle("warn");
 
     }
+    else{
+
+        addictionInput.classList.toggle("yes");
+    }
+
+
 
     if((!nameInput.value == "") && (!addictionIn.value == "")){
 
         //Neither fields are empty... proceeding with the data saving
-
+        dataHasBeenEntered = true;
     }
 }
 
@@ -46,11 +59,15 @@ function SaveData(){
 
     CheckForBlanks();
 
-    var name = nameInput.value;
-    console.log(name);
+    if(dataHasBeenEntered){ //Only proceeding with saving the data if bot values have been entered
 
-    var addiction = addictionIn.value;
-    console.log(addiction);
+        var name = nameInput.value;
+        console.log(name);
+
+        var addiction = addictionIn.value;
+        console.log(addiction);
+
+    }
 
 }
 
