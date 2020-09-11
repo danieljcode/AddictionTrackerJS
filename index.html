@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Addiction tracker V1.00</title>
 </head>
-<body>
+<body onload="CheckForSavedData()">
     
     <div class="container" id="container">
 
         <h2>Addiction tracker V1.00</h2>
         <h3>danieljcode</h3>
 
-        <form action="submit">
+        <form>
 
             <small>Your Name:</small>
             <input type="text" placeholder="Name..." id="nameIn">
@@ -20,7 +20,7 @@
             <small>Addiction Name:</small>
             <input type="text" placeholder="Name..." id="addictionIn">
 
-            <button type="submit" id="submitButton">Start recovery!</button>
+            <button type="click" id="submitButton">Start recovery!</button>
 
         </form>
 
