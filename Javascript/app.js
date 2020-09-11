@@ -1,5 +1,6 @@
-var greetingOneDisplay = document.getElementById("GreetingOne");
-var greetingTwoDisplay = document.getElementById("GreetingTwo");
+const greetingOneDisplay = document.getElementById("GreetingOne");
+const greetingTwoDisplay = document.getElementById("GreetingTwo");
+
 
 const userName = localStorage.getItem("USERNAME");
 
@@ -11,6 +12,7 @@ ShowGreeting();
 function CheckForSavedData(){
     //This function checks if there is data saved in localStorage and redirects the user if there isn't
     
+    console.log("PAGE LOADED");
         if(localStorage.getItem("USERNAME") == null || localStorage.getItem("ADDICTION") == undefined){
             //No data has been saved, send the user to the start page
             window.location.replace("index.html")
@@ -39,14 +41,15 @@ function FirstTimeCheck(){
 }
 
 function ShowGreeting(){
-
+ 
     var date = new Date();
-
+console.log(date.getHours());
     var hourNow = date.getHours();
-    if(hourNow > 0){
-
+    if(hourNow >= 0){ //Added the arrow = so the line is now more than or equal too zero... This fixes the problem I was having...
+        console.log("HERE")
         greetingOneDisplay.textContent = `Good morning ${userName}`;
         greetingTwoDisplay.textContent = welcomeMessage;
+        console.log(welcomeMessage);
 
     }else if(hourNow > 12){
         greetingOneDisplay.textContent = `Good afternoon ${userName}`;
