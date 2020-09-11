@@ -8,6 +8,20 @@ var welcomeMessage;
 FirstTimeCheck();
 ShowGreeting();
 
+function CheckForSavedData(){
+    //This function checks if there is data saved in localStorage and redirects the user if there isn't
+    
+        if(localStorage.getItem("USERNAME") == null || localStorage.getItem("ADDICTION") == undefined){
+            //No data has been saved, send the user to the start page
+            window.location.replace("index.html")
+            localStorage.clear();
+    
+        }else{
+    
+            //Data has been saved... keep the user here...
+        }
+    }
+
 function FirstTimeCheck(){
     //checking if this is the users first time here or not
 
