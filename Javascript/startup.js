@@ -12,10 +12,13 @@ function CheckForSavedData(){
     if(localStorage.getItem("USERNAME") == null || localStorage.getItem("ADDICTION") == undefined){
 
         //No data has been saved, keep the user on this start page
+        //DO NOTHING BASICALLY...
 
     }else{
 
         //Data has been saved... redirect the user away from this page to the main page
+        window.location.replace("app.html")
+
 
     }
 
@@ -76,8 +79,17 @@ function SaveData(){
         localStorage.setItem("USERNAME", name);
         localStorage.setItem("ADDICTION", addiction);
 
+        
+        var milliseconds = 5000; //5 seconds
+        setTimeout(ChangeWindow(), milliseconds);
+        
     }
 
+}
+
+function ChangeWindow(){
+
+    window.location.replace("app.html");
 }
 
 
