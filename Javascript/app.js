@@ -1,5 +1,5 @@
-const greetingOneDisplay = document.getElementById("GreetingOne");
-const greetingTwoDisplay = document.getElementById("GreetingTwo");
+var greetingOneDisplay = document.getElementById("GreetingOne");
+var greetingTwoDisplay = document.getElementById("GreetingTwo");
 
 const userName = localStorage.getItem("USERNAME");
 

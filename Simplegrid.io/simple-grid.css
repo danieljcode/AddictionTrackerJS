@@ -92,11 +92,7 @@ p {
 
 /* ==== GRID SYSTEM ==== */
 
-.container {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 .row {
   position: relative;
@@ -105,7 +101,6 @@ p {
 
 .row [class^="col"] {
   float: left;
-  margin: 0.5rem 2%;
   min-height: 0.125rem;
 }
 
@@ -134,6 +129,8 @@ p {
 
 .col-3-sm {
   width: 21%;
+  background-color: green;
+  height: 100vh;
 }
 
 .col-4-sm {
@@ -199,6 +196,8 @@ p {
 
   .col-3 {
     width: 21%;
+    background-color: green;
+    height: 100vh;
   }
 
   .col-4 {
