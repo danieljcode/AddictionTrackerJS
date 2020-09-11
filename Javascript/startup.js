@@ -9,7 +9,7 @@ var dataHasBeenEntered = false;
 function CheckForSavedData(){
 //This function checks if there is data saved in localStorage and redirects the user if there is
 
-    if(localStorage.getItem("USERNAME") == null || localStorage.getItem("USERNAME") == undefined){
+    if(localStorage.getItem("USERNAME") == null || localStorage.getItem("ADDICTION") == undefined){
 
         //No data has been saved, keep the user on this start page
 
@@ -27,22 +27,22 @@ function CheckForBlanks(){
     if(nameInput.value == ""){
         dataHasBeenEntered = false;
 
-        nameInput.classList.toggle("warn"); //Setting the class list to include warn which I will use to style the input red in CSS
+        nameInput.className = "warn"; //Setting the class list to include warn which I will use to style the input red in CSS
 
     }else{
 
-        addictionInput.classList.toggle("yes"); //Setting the class list to have yes which will be green in CSS
+        nameInput.className = "yes"; //Setting the class list to have yes which will be green in CSS
     }
 
     if(addictionInput.value == ""){
         dataHasBeenEntered = false;
 
-        addictionInput.classList.toggle("warn");
+        addictionInput.className = "warn";
 
     }
     else{
 
-        addictionInput.classList.toggle("yes");
+        addictionInput.className = "yes";
     }
 
 
@@ -51,6 +51,10 @@ function CheckForBlanks(){
 
         //Neither fields are empty... proceeding with the data saving
         dataHasBeenEntered = true;
+
+    }else{
+
+        dataHasBeenEntered = false;
     }
 }
 
@@ -61,11 +65,16 @@ function SaveData(){
 
     if(dataHasBeenEntered){ //Only proceeding with saving the data if bot values have been entered
 
+        //Getting the data
         var name = nameInput.value;
         console.log(name);
 
         var addiction = addictionIn.value;
         console.log(addiction);
+
+        //Saving the data to localStorage
+        localStorage.setItem("USERNAME", name);
+        localStorage.setItem("ADDICTION", addiction);
 
     }
 
