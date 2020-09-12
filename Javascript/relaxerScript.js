@@ -8,8 +8,17 @@ const holdTime = totalTime / 5;
 
 if(localStorage.getItem("FIRSTTIMErelaxer") == null || localStorage.getItem("FIRSTTIMErelaxer") == undefined){
 
-alert(`Welcome, This relaxer is designed to help you breather, calm down and beat any cravings!
+
+
+var r = confirm(`Welcome, This relaxer is designed to help you breather, calm down and beat any cravings!
 Follow the instructions as they are presented...`);
+
+    if (r == true) {
+        BreatheAnimation();
+    } else {
+        window.location.replace("app.html");
+    }
+
     //Showing the user a message If the have not been to the relaxer before
     localStorage.setItem("FIRSTTIMErelaxer", "NO"); //Updating local storage so they won't see this message again...
 
@@ -19,7 +28,7 @@ Follow the instructions as they are presented...`);
 
 //console.log(totalTime, breatheTime, holdTime);
 
-BreatheAnimation();
+
 
 function BreatheAnimation(){
     TextMsg.innerText = "Breathe in!";
