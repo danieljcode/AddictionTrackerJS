@@ -6,15 +6,18 @@ const relapseBtn = document.getElementById("relapse");
 
 const userName = localStorage.getItem("USERNAME");
 
+const relapseDisplay = document.getElementById("relapseDisplay");
+
+
+
 var welcomeMessage;
 var lastRelapseDate;
-var relapses = [];
-Relapse()
+var relapses;
 FirstTimeCheck();
 CheckForSavedDate();
 ShowGreeting();
 ShowMotivation();
-
+DisplayRelapses();
 
 function CheckForSavedData(){
     //This function checks if there is data saved in localStorage and redirects the user if there isn't
@@ -92,13 +95,34 @@ function RedirectUserEMERGENCY(){
 
     window.location.replace("breathingApp.html");
 
+    if(localStorage.getItem("FIRSTTIMErelaxer") == null || localStorage.getItem("FIRSTTIMErelaxer") == undefined){
+
+
+
+var r = confirm(`Hello, This relaxer is designed to help you breather, calm down and beat any cravings!
+Follow the instructions as they are presented...`);
+        
+            if (r == true) {
+                window.location.replace("breathingApp.html");
+            } else {
+                //Do nothing
+            }
+        
+            //Showing the user a message If the have not been to the relaxer before
+            localStorage.setItem("FIRSTTIMErelaxer", "NO"); //Updating local storage so they won't see this message again...
+        
+        }else{
+        
+            window.location.replace("breathingApp.html");
+        }
+
+
 }
 
 function Relapse(){
 
     //This code will be run when the user logs a relapse
     relapses = JSON.parse(localStorage.getItem("relapsesArray"));
-
     var relapseNumber = (relapses.length);
     lastRelapseDate = new Date();
     localStorage.setItem("LASTrelapse", lastRelapseDate);
@@ -106,8 +130,36 @@ function Relapse(){
 
     lastRelapseDate = localStorage.getItem("LASTrelapse");
 
-    relapses.push("Relapse " + relapseNumber + ": " + new Date());
+    relapses.push("- Relapse " + relapseNumber + ": " + new Date());
     localStorage.setItem("relapsesArray",  JSON.stringify(relapses));
+   
+
+    DisplayRelapses();
+}
+
+function RemoveAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+function DisplayRelapses(){
+    relapses = JSON.parse(localStorage.getItem("relapsesArray"));
+    RemoveAllChildNodes(relapseDisplay);
+
+
+    for (let i = 0; i < relapses.length; i++) {
+        console.log(relapses[i]);
+
+        var currentText = relapses[i];
+
+        var newRelapse = document.createElement("h3");
+        newRelapse.className = "relapse";
+        newRelapse.innerHTML = currentText;
+        
+        relapseDisplay.appendChild(newRelapse);
+
+      }
 
 
 }

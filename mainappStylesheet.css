@@ -1,7 +1,7 @@
 body{
 
     margin: 0px;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: #222f3e;
     
 }
@@ -18,9 +18,9 @@ body{
 
     background-color: #2e86de;
     width: 100%;
-   padding: 0;
-   margin: 0;
-   top: 0;
+    padding: 0;
+    margin: 0;
+    top: 0;
 }
 
 #emergency{
