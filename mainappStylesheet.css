@@ -23,6 +23,22 @@ body{
    top: 0;
 }
 
+#emergency{
+
+    position: absolute;
+    bottom: 35px;
+    padding: 12px;
+    right: 35px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #ff6b6b;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #ee5253;
+
+}
+
 @media(max-width: 880px){
     
 
