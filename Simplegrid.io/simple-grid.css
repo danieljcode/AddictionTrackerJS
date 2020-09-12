@@ -116,7 +116,7 @@ p {
 .col-10,
 .col-11,
 .col-12 {
-  width: 96%;
+  width: 100%;
 }
 
 .col-1-sm {
@@ -128,8 +128,7 @@ p {
 }
 
 .col-3-sm {
-  width: 21%;
-  background-color: #576574;
+  width: 25%;
   height: 100vh;
 }
 
@@ -154,7 +153,7 @@ p {
 }
 
 .col-9-sm {
-  width: 71%;
+  width: 75%;
 }
 
 .col-10-sm {
@@ -166,7 +165,7 @@ p {
 }
 
 .col-12-sm {
-  width: 96%;
+  width: 100%;
 }
 
 .row::after {
@@ -175,15 +174,6 @@ p {
 	clear: both;
 }
 
-.hidden-sm {
-  display: none;
-}
-
-@media only screen and (min-width: 33.75em) {  /* 540px */
-  .container {
-    width: 80%;
-  }
-}
 
 @media only screen and (min-width: 45em) {  /* 720px */
   .col-1 {
@@ -195,8 +185,7 @@ p {
   }
 
   .col-3 {
-    width: 21%;
-    background-color: #576574;
+    width: 25%;
     height: 100vh;
   }
 
@@ -221,7 +210,7 @@ p {
   }
 
   .col-9 {
-    width: 71%;
+    width: 75%;
   }
 
   .col-10 {
@@ -233,17 +222,16 @@ p {
   }
 
   .col-12 {
-    width: 96%;
-  }
-
-  .hidden-sm {
-    display: block;
+    width: 100%;
   }
 }
 
-@media only screen and (min-width: 60em) { /* 960px */
-  .container {
-    width: 75%;
-    max-width: 60rem;
+@media(max-width: 880px){
+
+  .col-9, .col-9-sm{
+
+    width: 100%;
+
   }
+
 }

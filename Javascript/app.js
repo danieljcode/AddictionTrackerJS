@@ -49,12 +49,11 @@ function ShowGreeting(){
 
         greetingOneDisplay.textContent = `Good morning `;
         greetingTwoDisplay.textContent = welcomeMessage;
-        console.log(welcomeMessage);
 
-    }else if(hourNow > 12){
+    }else if(hourNow >= 12){
         greetingOneDisplay.textContent = `Good afternoon`;
         greetingTwoDisplay.textContent = welcomeMessage;
-    }else if(hourNow > 18){
+    }else if(hourNow >= 18){
         greetingOneDisplay.textContent = `Good evening`;
         greetingTwoDisplay.textContent = welcomeMessage;
     }
