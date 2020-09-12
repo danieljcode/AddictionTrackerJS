@@ -47,11 +47,11 @@ body{
     left: 35px;
     border-radius: 10px;
     outline: none;
-    border: 1px solid #ff6b6b;
+    border: 1px solid #5f27cd;
     color: white;
     font-weight: bold;
     font-size: 16px;
-    background-color: #ee5253;
+    background-color: #341f97;
 
 }
 
@@ -74,6 +74,19 @@ body{
 .right{
 
     float: right;
+}
+
+.fromTop{
+
+    margin-top: 65%;
+    border-top: 2px solid #ff9f43;
+    border-bottom: 2px solid #ff9f43;
+
+
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 
