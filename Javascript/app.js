@@ -1,6 +1,6 @@
 const greetingOneDisplay = document.getElementById("GreetingOne");
 const greetingTwoDisplay = document.getElementById("GreetingTwo");
-
+const motivationDisplay = document.getElementById("motivation");
 
 const userName = localStorage.getItem("USERNAME");
 
@@ -8,6 +8,7 @@ var welcomeMessage;
 
 FirstTimeCheck();
 ShowGreeting();
+ShowMotivation();
 
 function CheckForSavedData(){
     //This function checks if there is data saved in localStorage and redirects the user if there isn't
@@ -62,3 +63,19 @@ function ShowGreeting(){
 
 }
 
+function ShowMotivation(){
+
+    var motivation = ["As human beings, our greatness lies not so much in being able to remake the world… as in being able to remake ourselves. - Mahatma Gandhi", "You cannot solve a problem from the same consciousness that created it. You must learn to see the world anew. - Albert Einstein", "If you find yourself in a hole, the first thing to do is stop digging. - Unknown", "The best way out is always through. – Robert Frost", "The opposite of addiction is not sobriety, but human connection. - Unknown", "I’m Not Telling You It Is Going To Be Easy, I’m Telling You It’s Going To Be Worth It. - Unknown", "You Are Not Defined By your Relapses, But By My Decision To Remain In Recovery Despite Them. - Unknown"];
+    //All the motivational quotes stored in an array
+
+
+    var rand = Math.floor((Math.random() * 7) + 1);
+    //console.log(rand);
+
+    var quoteToShow = motivation[rand - 1]; //The randomnumber is between 1 and 7 so I have to take one off so the numbers ill be between 0 and 6 for the array...
+    console.log(quoteToShow);
+
+    motivationDisplay.textContent = quoteToShow;
+
+
+}setInterval(ShowMotivation, 25000); //Running this again every 25 seconds
