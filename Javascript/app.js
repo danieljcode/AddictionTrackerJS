@@ -92,8 +92,6 @@ function ShowMotivation(){
 
 function RedirectUserEMERGENCY(){
 
-    window.location.replace("breathingApp.html");
-
     if(localStorage.getItem("FIRSTTIMErelaxer") == null || localStorage.getItem("FIRSTTIMErelaxer") == undefined){
 
 
