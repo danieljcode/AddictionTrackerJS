@@ -36,3 +36,9 @@ function BreatheAnimation(){
     }, breatheTime);
 
 }setInterval(BreatheAnimation, totalTime);
+
+function RedirectUserBACK(){
+
+    window.location.replace("app.html");
+
+}
