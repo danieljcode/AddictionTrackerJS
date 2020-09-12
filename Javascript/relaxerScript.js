@@ -22,6 +22,10 @@ Follow the instructions as they are presented...`);
     //Showing the user a message If the have not been to the relaxer before
     localStorage.setItem("FIRSTTIMErelaxer", "NO"); //Updating local storage so they won't see this message again...
 
+}else{
+
+    BreatheAnimation();
+
 }
 
 
