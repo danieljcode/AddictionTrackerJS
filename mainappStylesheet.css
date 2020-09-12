@@ -39,6 +39,23 @@ body{
 
 }
 
+#relapse{
+
+    position: fixed;
+    bottom: 35px;
+    padding: 12px;
+    left: 35px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #ff6b6b;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #ee5253;
+
+}
+
+
 @media(max-width: 880px){
     
 

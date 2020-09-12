@@ -2,6 +2,8 @@ const greetingOneDisplay = document.getElementById("GreetingOne");
 const greetingTwoDisplay = document.getElementById("GreetingTwo");
 const motivationDisplay = document.getElementById("motivation");
 
+const relapseBtn = document.getElementById("relapse");
+
 const userName = localStorage.getItem("USERNAME");
 
 var welcomeMessage;
@@ -100,6 +102,8 @@ function Relapse(){
     var relapseNumber = (relapses.length);
     lastRelapseDate = new Date();
     localStorage.setItem("LASTrelapse", lastRelapseDate);
+
+
     lastRelapseDate = localStorage.getItem("LASTrelapse");
 
     relapses.push("Relapse " + relapseNumber + ": " + new Date());
@@ -113,7 +117,7 @@ function CheckForSavedDate(){
 
     if(localStorage.getItem("LASTrelapse") == null || localStorage.getItem("LASTrelapse") == undefined){
 
-        //No previous relapse date storeds
+        //No previous relapse date stored
 
     }else{
 
@@ -122,3 +126,11 @@ function CheckForSavedDate(){
     }
 
 }
+
+
+
+relapseBtn.addEventListener("click", (e)=>{
+
+    Relapse();
+
+})
