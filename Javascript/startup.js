@@ -66,7 +66,7 @@ function SaveData(){
 
     CheckForBlanks();
 
-    if(dataHasBeenEntered){ //Only proceeding with saving the data if bot values have been entered
+    if(dataHasBeenEntered){ //Only proceeding with saving the data if both values have been entered
 
         //Getting the data
         var name = nameInput.value;
@@ -74,6 +74,9 @@ function SaveData(){
 
         var addiction = addictionIn.value;
         console.log(addiction);
+
+        var relapses = ["When you you quit: " + new Date()]; //Creating and saving an item  when the user starts using the web app so this localStorage value will never be null in the main app and I wont have to check if it is null or not...
+        localStorage.setItem("relapsesArray",  JSON.stringify(relapses));
 
         //Saving the data to localStorage
         localStorage.setItem("USERNAME", name);

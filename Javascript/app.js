@@ -5,10 +5,14 @@ const motivationDisplay = document.getElementById("motivation");
 const userName = localStorage.getItem("USERNAME");
 
 var welcomeMessage;
-
+var lastRelapseDate;
+var relapses = [];
+Relapse()
 FirstTimeCheck();
+CheckForSavedDate();
 ShowGreeting();
 ShowMotivation();
+
 
 function CheckForSavedData(){
     //This function checks if there is data saved in localStorage and redirects the user if there isn't
@@ -23,6 +27,7 @@ function CheckForSavedData(){
     
             //Data has been saved... keep the user here...
         }
+
     }
 
 function FirstTimeCheck(){
@@ -84,5 +89,36 @@ function ShowMotivation(){
 function RedirectUserEMERGENCY(){
 
     window.location.replace("breathingApp.html");
+
+}
+
+function Relapse(){
+
+    //This code will be run when the user logs a relapse
+    relapses = JSON.parse(localStorage.getItem("relapsesArray"));
+
+    var relapseNumber = (relapses.length);
+    lastRelapseDate = new Date();
+    localStorage.setItem("LASTrelapse", lastRelapseDate);
+    lastRelapseDate = localStorage.getItem("LASTrelapse");
+
+    relapses.push("Relapse " + relapseNumber + ": " + new Date());
+    localStorage.setItem("relapsesArray",  JSON.stringify(relapses));
+
+
+}
+
+function CheckForSavedDate(){
+
+
+    if(localStorage.getItem("LASTrelapse") == null || localStorage.getItem("LASTrelapse") == undefined){
+
+        //No previous relapse date storeds
+
+    }else{
+
+        lastRelapseDate = localStorage.getItem("LASTrelapse");
+
+    }
 
 }
