@@ -79,3 +79,10 @@ function ShowMotivation(){
 
 
 }setInterval(ShowMotivation, 25000); //Running this again every 25 seconds
+
+
+function RedirectUserEMERGENCY(){
+
+    window.location.replace("breathingApp.html");
+
+}

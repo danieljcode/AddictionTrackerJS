@@ -7,7 +7,7 @@
 
 body{
 
-    background: #646fd4 url(Media/background.jpg) no-repeat center center;
+    background: #646fd4 url(Media/calming.jpg) no-repeat center center;
     min-height: 100vh;
     overflow: hidden;
     align-items: center;
@@ -16,7 +16,7 @@ body{
     flex-direction: column;
     font-size: 125%;
     color: white;
-
+    background-size: cover;
     margin: 0;
 
 }
