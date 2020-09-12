@@ -25,7 +25,7 @@ body{
 
 #emergency{
 
-    position: absolute;
+    position: fixed;
     bottom: 35px;
     padding: 12px;
     right: 35px;

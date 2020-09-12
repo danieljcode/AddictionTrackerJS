@@ -140,7 +140,7 @@ body{
 
 #back{
 
-    position: absolute;
+    position: fixed;
     bottom: 35px;
     padding: 12px;
     right: 35px;
