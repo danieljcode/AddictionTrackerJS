@@ -204,9 +204,18 @@ function updateClock ( )
 
   // Update the time display
   document.getElementById("clock").innerHTML = currentTimeString;
+
+
+  const lastDisplay = document.getElementById("last");
+
+  lastDisplay.innerHTML = lastRelapseDate;
+
 }
 
 setInterval('updateClock()', 1000 )
+
+
+
 
 
 relapseBtn.addEventListener("click", (e)=>{
