@@ -55,18 +55,22 @@ function ShowGreeting(){
  
     var date = new Date();
 
-    var hourNow = date.getHours();
-    if(hourNow >= 0){ //Added the arrow = so the line is now more than or equal too zero... This fixes the problem I was having...
 
-        greetingOneDisplay.textContent = `Good morning `;
+    var currentH = date.getHours();
+    if(currentH >= 0){ //Added the arrow = so the line is now more than or equal too zero... This fixes the problem I was having...
+
+        greetingOneDisplay.textContent = "Good morning";
         greetingTwoDisplay.textContent = welcomeMessage;
 
-    }else if(hourNow >= 12){
-        greetingOneDisplay.textContent = `Good afternoon`;
+    }
+    if(currentH >= 12){
+        greetingOneDisplay.textContent = "Good afternoon";
         greetingTwoDisplay.textContent = welcomeMessage;
-    }else if(hourNow >= 18){
-        greetingOneDisplay.textContent = `Good evening`;
+    }
+    if(currentH >= 18){
+        greetingOneDisplay.textContent = "Good evening";
         greetingTwoDisplay.textContent = welcomeMessage;
+        
     }
 
     
