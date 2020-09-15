@@ -2,6 +2,8 @@ const greetingOneDisplay = document.getElementById("GreetingOne");
 const greetingTwoDisplay = document.getElementById("GreetingTwo");
 const motivationDisplay = document.getElementById("motivation");
 
+const deleteButton = document.getElementById("delete");
+
 const relapseBtn = document.getElementById("relapse");
 
 const userName = localStorage.getItem("USERNAME");
@@ -133,7 +135,7 @@ function Relapse(){
 
     lastRelapseDate = localStorage.getItem("LASTrelapse");
 
-    relapses.push("- Relapse " + relapseNumber + ": " + new Date());
+    relapses.push("🔥 Relapse " + relapseNumber + ": " + new Date());
     localStorage.setItem("relapsesArray",  JSON.stringify(relapses));
    
 
@@ -214,7 +216,7 @@ function updateClock ( )
 
   const lastDisplay = document.getElementById("last");
 
-  lastDisplay.innerHTML = lastRelapseDate;
+  lastDisplay.innerHTML = "Last relapse: " + lastRelapseDate;
 
 }
 
@@ -230,3 +232,8 @@ relapseBtn.addEventListener("click", (e)=>{
 
 })
 
+deleteButton.addEventListener("click", (e) =>{
+
+    localStorage.clear();
+    document.location.reload();
+})
