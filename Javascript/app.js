@@ -49,6 +49,8 @@ function FirstTimeCheck(){
         
     }
 
+    lateRelapseDate = localStorage.getItem("LASTrelapse");
+
 }
 
 function ShowGreeting(){

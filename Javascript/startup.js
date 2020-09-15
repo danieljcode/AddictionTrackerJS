@@ -82,6 +82,9 @@ function SaveData(){
         localStorage.setItem("USERNAME", name);
         localStorage.setItem("ADDICTION", addiction);
 
+        lastRelapseDate = new Date();
+        localStorage.setItem("LASTrelapse", lastRelapseDate);
+
         
         var milliseconds = 5000; //5 seconds
         setTimeout(ChangeWindow(), milliseconds);
