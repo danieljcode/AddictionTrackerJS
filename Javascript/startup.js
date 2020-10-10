@@ -50,7 +50,7 @@ function CheckForBlanks(){
 
 
 
-    if((!nameInput.value == "") && (!addictionIn.value == "")){
+    if(nameInput.value && addictionIn.value){
 
         //Neither fields are empty... proceeding with the data saving
         dataHasBeenEntered = true;
@@ -86,16 +86,13 @@ function SaveData(){
         localStorage.setItem("LASTrelapse", lastRelapseDate);
 
         
-        var milliseconds = 5000; //5 seconds
-        setTimeout(ChangeWindow(), milliseconds);
+        setTimeout(() =>{
+            window.location.replace("app.html");
+
+        }, 1000);
         
     }
 
-}
-
-function ChangeWindow(){
-
-    window.location.replace("app.html");
 }
 
 
