@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="startStyle.css" type="text/css" rel="stylesheet">
+    <link href="CSS/startStyle.css" type="text/css" rel="stylesheet">
     <title>Getting started - Addiction Tracker</title>
 </head>
-<body>
+<body onload="CheckData()">
 
-    <h1>Addiction Tracker V1.00</h1>
+    <div class="intro">
+        <h1 id="greeting"></h1>
+        <h1 id="instructions"></h1>
+    </div>
 
     <div class="container">
-
+        
+        <form id="name" action="">
+            <input class="input" type="text" placeholder="Your name" spellcheck="true">
+        </form>
     </div>
     
+
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <script src="Javascript/typeIt.js"></script>
+    <script src="Javascript/startScript.js"></script>
 </body>
 
 <footer>
