@@ -7,14 +7,14 @@ body{
     background-image: url("/Media/lake-pixabay.jpg");
     background-repeat: no-repeat;
     color: white;
+    overflow-x: hidden;
+    background-color: #576574;
 
 }
 
 #message{
     font-size: 60pt;
 }
-
-
 
 @media(max-width: 600px){
     #message{
@@ -23,4 +23,40 @@ body{
     #message2{
         font-size: 14pt;
     }
+    #info h2{
+        border-bottom: 1px solid black;
+        width: 80% !important;
+    }
+    
 }
+
+#info{
+    margin-top: 1150px;
+    border: 1px solid white;
+    background-color: white;
+    opacity: 0.55;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+}
+
+.title{
+    border-bottom: 2px solid #252525;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 1;
+}
+
+#info h2, #info p{
+    opacity: 1;
+    text-align: left;
+    margin-left: 40px;
+    color: black
+}
+
+#info h2{
+    border-bottom: 1px solid black;
+    width: 45%
+}
+

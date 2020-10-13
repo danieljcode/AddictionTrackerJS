@@ -1,6 +1,6 @@
 new TypeIt("#message", {
     strings: "Your freedom begins now!",
-    speed: 40,
+    speed: 70,
     waitUntilVisible: true,
     cursor: false
   }).go();
@@ -15,9 +15,9 @@ new TypeIt("#message", {
       .type("An source", {delay: 100})
       .move(-6, {speed: 25, delay: 100})
       .type('open ')
-      .move("END", {delay: 200})
-      .type(" addiction tracker", {delay: 150})
+      .move("END", {delay: 300})
+      .type(" web app", {delay: 150})
       .type(" built using Javascript.")
       .go();
 
-  }, 2000)
+  }, 2100)
