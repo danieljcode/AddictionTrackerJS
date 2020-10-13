@@ -33,7 +33,7 @@ btn.addEventListener("click", (e) => {
     if (nameInput.value) {
 
         nameInput.classList.toggle("green");
-        window.location.replace("options.html");
+        window.location.replace("optionsPages/options.html");
         //THE USER HAS SUBMITTED TEXT, REDIRECTING THEM
     } else {
 
