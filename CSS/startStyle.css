@@ -68,6 +68,9 @@ a {
     color: black;
     text-decoration: underline;
 }
+a:hover{
+    color: white;
+}
 
 p {
     color: black;
