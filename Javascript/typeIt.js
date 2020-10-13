@@ -1,5 +1,5 @@
 new TypeIt("#greeting", {
-  strings: "Hello and welcome to Addiction Tracker!",
+  strings: "Hello and welcome to Addiction Tracker...",
   speed: 100,
   waitUntilVisible: true,
   cursor: false
