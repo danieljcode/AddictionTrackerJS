@@ -21,3 +21,7 @@ new TypeIt("#message", {
       .go();
 
   }, 2100)
+
+  if(localStorage.getItem("username")){
+    document.getElementById("btn1").innerHTML = "Resume app";
+  }

@@ -12,13 +12,43 @@ body {
     text-align: center;
 }
 
-select{
+select {
     padding: 10px;
     font-size: 12pt;
-    width: 35%;
+    width: 45%;
 }
 
-#messageTwo{
+#finish {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+
+    animation-name: Bubble;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    display: none;
+}
+
+@keyframes Bubble {
+
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+
+}
+
+
+#messageTwo {
     display: none;
     color: #fdfdfd;
     text-decoration: underline;
@@ -30,16 +60,16 @@ select{
 
 }
 
-#message{
-        border-bottom: 1px solid #dedede;
-        text-align: center;
-        width: 80%;
-        padding-bottom: 5px;
-        margin-left: auto;
-        margin-right: auto;
+#message {
+    border-bottom: 1px solid #dedede;
+    text-align: center;
+    width: 80%;
+    padding-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#main{
+#main {
     display: none;
     border: 1px solid white;
     background-color: white;

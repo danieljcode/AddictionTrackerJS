@@ -2,7 +2,7 @@ var optionSelected = localStorage.getItem("typeOfAddiction");
 var addictionType;
 
 const substanceSelect = document.getElementById("substance");
-const behavioralSelect = document.getElementById("behavioral")
+const behavioralSelect = document.getElementById("behavioral");
 
 if(optionSelected == 1){
     addictionType = "substance addiction";
@@ -28,3 +28,18 @@ setTimeout(()=>{
     document.getElementById("messageTwo").style.display ="block";
     document.getElementById("main").style.display = "block"; //SHOWING THE MAIN AREA
 }, 4200);
+
+
+
+
+substanceSelect.addEventListener("change", ()=>{
+    console.log("change [substance]");
+    document.getElementById("finish").style.display = "block";
+    localStorage.setItem("addictionName", substanceSelect.value);
+})
+
+behavioralSelect.addEventListener("change", ()=>{
+    console.log("change [behavioral]");
+    document.getElementById("finish").style.display = "block";
+    localStorage.setItem("addictionName", behavioralSelect.value);
+})
