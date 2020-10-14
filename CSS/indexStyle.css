@@ -4,7 +4,7 @@ body{
     margin-right: auto;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    background-image: url("/Media/lake-pixabay.jpg");
+    background-image: url("Media/lake-pixabay.jpg");
     background-repeat: no-repeat;
     color: white;
     overflow-x: hidden;
