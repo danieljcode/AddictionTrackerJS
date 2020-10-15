@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+
+button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    animation-name: Bubble;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    display: none;
+    color: white;
+}
+
+@keyframes Bubble {
+
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+
+}
+
+#main {
+    border: 1px solid white;
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 0px 30px 0px rgba(0, 0, 0, 0.5);
+    padding-bottom: 35px;
+    margin-top: 20em;
+    text-align: center;
+}
+
+li{
+    text-align: left;
+}
+
+body{
+    background-color: #54a0ff;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+label, select{
+    padding: 8px;
+    font-size: 12pt;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}

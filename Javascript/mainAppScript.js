@@ -123,14 +123,11 @@ console.log(now.addWeeks(1));
 function CheckForGoal(){
     //CHECKING FOR SAVED GOALS
 
-    localStorage.setItem("currentGoal", JSON.stringify({
-        name: "goal",
-        duration: 7
-    }))
-
     if(localStorage.getItem("currentGoal")){
         //A GOAL IS SAVED...
         goalDisplay.textContent = JSON.parse(localStorage.getItem("currentGoal")).duration;
+    }else{
+        //NO GOAL SAVED
     }
 
 }
