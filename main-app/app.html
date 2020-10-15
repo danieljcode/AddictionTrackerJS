@@ -28,9 +28,16 @@
             <div class="col-6 col-12-sm cutout">
                 <h2>Current goal:</h2>
                 <h1 id="goalDisplay">No goal - <a href="setGoal.html">Set a goal</a></h1>
+                <h1 id="goalDuration"></h1>
+
+                <button class="deleteBtn" onclick="localStorage.removeItem('currentGoal'); window.location.reload()" id="delGoalBtn">DELETE GOAL</button>
             </div>
         </div>
     </div>
+
+    <button onclick="Relapse()">Log a relapse</button>
+    <button>Delete data</button>
+    <button>PANIC BUTTON</button>
 
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
     <script src="https://kit.fontawesome.com/42575f5eb5.js" crossorigin="anonymous"></script>

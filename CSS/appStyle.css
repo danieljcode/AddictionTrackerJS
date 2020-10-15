@@ -12,9 +12,27 @@ body {
 
 .cutout {
     background-color: white;
-    min-height: 25vh;
-    height: 15em;
+    height: 25em;
     font-family: 'Kumbh Sans', sans-serif;
     opacity: 1;
     box-shadow: 5px 0px 30px 0px rgba(0, 0, 0, 0.5);
+}
+
+.deleteBtn{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    color: rgb(255, 59, 59);
+    padding: 8px;
+    background-color: #dedede;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    outline: none;
+    font-weight: bold;
+    border: none;
+}
+
+.deleteBtn:hover{
+    color: red;
 }
