@@ -6,6 +6,13 @@ const goalDuration = document.getElementById("goalDuration");
 
 const deleteGoalButton = document.getElementById("delGoalBtn");
 
+
+DateCalculation();
+ShowGreeting();
+setInterval("updateClock()", 1000);
+
+
+
 function CheckForSavedData() {
     //This function checks if there is data saved in localStorage and redirects the user if there isn't
 
@@ -22,7 +29,6 @@ function CheckForSavedData() {
 
 }
 
-ShowGreeting();
 
 //GREETING THE USER
 function ShowGreeting() {
@@ -47,7 +53,6 @@ function ShowGreeting() {
 
 
 }
-setInterval("updateClock()", 1000);
 
 //THE CLOCK
 function updateClock() {
@@ -120,5 +125,23 @@ function Relapse(){
         date: `${day}/${month}/${year}`,
         time: time
     }));
+
+}
+
+
+function DateCalculation(){
+    moment().format();
+
+    var lastRelapseDate = JSON.parse(localStorage.getItem("lastRelapse")).date;
+
+    var now = new Date();
+    var day = now.getDate();
+    var month = now.getMonth() + 1;
+    var year = now.getFullYear();
+
+    var a = moment(lastRelapseDate,'D/M/YYYY');
+    var b = moment(`${day}/${month}/${year}`,'D/M/YYYY');
+    var diffDays = b.diff(a, 'days');
+    alert(diffDays);
 
 }
