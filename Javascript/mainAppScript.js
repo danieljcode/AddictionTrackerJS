@@ -1,9 +1,11 @@
+//DISPLAYS
 const greetingOneDisplay = document.getElementById("GreetingOne");
 const greetingTwoDisplay = document.getElementById("GreetingTwo");
-
 const goalDisplay = document.getElementById("goalDisplay");
 const goalDuration = document.getElementById("goalDuration");
+const daysSinceDisplay = document.getElementById("daysSince")
 
+//BUTTONS
 const deleteGoalButton = document.getElementById("delGoalBtn");
 
 
@@ -142,6 +144,5 @@ function DateCalculation(){
     var a = moment(lastRelapseDate,'D/M/YYYY');
     var b = moment(`${day}/${month}/${year}`,'D/M/YYYY');
     var diffDays = b.diff(a, 'days');
-    alert(diffDays);
-
+    daysSinceDisplay.textContent = diffDays;
 }

@@ -21,28 +21,33 @@
         </div>
         <div class="row">
             <div class="col-6 col-12-sm cutout">
-                <h2>All you have to do is stay in the moment</h2>
+                <h2>All you have to do is stay present in the moment and don't relapse now</h2>
                 <h1 id="clock">--:--:-- AM/PM</h1>
             </div>
 
-            <div class="col-6 col-12-sm cutout">
+            <div class="col-6 col-12-sm cutout" id="goal">
                 <h2>Current goal:</h2>
                 <h1 id="goalDisplay">No goal - <a href="setGoal.html">Set a goal</a></h1>
                 <h1 id="goalDuration"></h1>
 
                 <button class="deleteBtn" onclick="localStorage.removeItem('currentGoal'); window.location.reload()" id="delGoalBtn">DELETE GOAL</button>
             </div>
+
+            <div class="col-12 col-12-sm cutout">
+                <h1 style="font-size: 40pt;">Days since last relapse:</h1>
+                <h1 id="daysSince" style="font-size: 85pt;"></h1>
+            </div>
         </div>
     </div>
 
-    <button onclick="Relapse()">Log a relapse</button>
-    <button>Delete data</button>
-    <button>PANIC BUTTON</button>
+    <button id="fixedBtn1" onclick="Relapse(); window.location.reload()">Log a relapse</button>
+    <button id="fixedBtn2">Delete data</button>
+    <button id="fixedBtn3">PANIC BUTTON</button>
 
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
     <script src="https://kit.fontawesome.com/42575f5eb5.js" crossorigin="anonymous"></script>
 
-    <script src="../MomentJS/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script src="../Javascript/mainAppScript.js"></script>
 </body>
 </html>
