@@ -97,7 +97,6 @@ function CheckForGoal() {
         goalDuration.textContent = "Duration: " + JSON.parse(localStorage.getItem("currentGoal")).duration + " Days";
 
         deleteGoalButton.style.display = "block";
-        console.log(i);
 
     } else {
         //NO GOAL SAVED
@@ -135,6 +134,7 @@ function DateCalculation(){
     moment().format();
 
     var lastRelapseDate = JSON.parse(localStorage.getItem("lastRelapse")).date;
+    var goalSet = JSON.parse(localStorage.getItem("currentGoal")).dateStartedShort;
 
     var now = new Date();
     var day = now.getDate();
@@ -145,4 +145,20 @@ function DateCalculation(){
     var b = moment(`${day}/${month}/${year}`,'D/M/YYYY');
     var diffDays = b.diff(a, 'days');
     daysSinceDisplay.textContent = diffDays;
+
+
+    var a2 = moment(goalSet,'D/M/YYYY/');
+    var b2 = moment(`${day}/${month}/${year}`,'D/M/YYYY');
+    var diffDays = b2.diff(a2, 'days');
+    console.log("Days left in current goal: " +diffDays);
+    
+    Date.prototype.addDays = function(days) {
+        var date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return date;
+    }
+    
+    var date = new Date(JSON.parse(localStorage.getItem("currentGoal")).dateStarted);
+    
+    console.log("Goal ends: "+date.addDays(+(JSON.parse(localStorage.getItem("currentGoal")).duration)));
 }

@@ -10,10 +10,16 @@ function GoalData(){
 
 function SetGoal(goalName, goalDuration){
 
+    var now = new Date();
+    var day = now.getDate();
+    var month = now.getMonth() + 1;
+    var year = now.getFullYear();
+
     localStorage.setItem("currentGoal", JSON.stringify({
         name: goalName,
         duration: goalDuration,
-         dateStarted: new Date()
+        dateStarted: new Date(),
+        dateStartedShort: `${day}/${month}/${year}`
     }))
 
     window.location.replace("../main-app/app.html")
