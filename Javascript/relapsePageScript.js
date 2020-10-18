@@ -1,5 +1,9 @@
 const slider = document.getElementById("slider");
 
+var timesArray;
+
+SaveTime();
+
 slider.addEventListener("change", (event) => {
 
     console.log(slider.value);
@@ -20,3 +24,28 @@ slider.addEventListener("change", (event) => {
     }
 
 })
+
+function SaveTime(){
+    //THIS FUNCTION CALCULATES AND SAVES WHAT TIME OF DAY IT IS (MORNING, AFTERNOON, ETC)
+
+    timesArray = JSON.parse(localStorage.getItem("timesArray"));
+    var date = new Date();
+
+    var currentH = date.getHours();
+    if (currentH >= 0 && currentH < 12) {
+        //MORNING  
+        timesArray.push("morning");
+    }
+    if (currentH >= 12 && currentH < 18) {
+        //AFTERNOON
+        timesArray.push("afternoon");
+        
+    }
+    if (currentH >= 18) {
+        //NIGHT
+        timesArray.push("night");
+    }
+    
+    //SAVING THIS NEW ARRAY
+    localStorage.setItem("timesArray", JSON.stringify(timesArray));
+}

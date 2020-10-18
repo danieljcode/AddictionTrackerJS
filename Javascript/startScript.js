@@ -31,11 +31,13 @@ btn.addEventListener("click", (e) => {
     e.preventDefault();
 
     if (nameInput.value) {
-
+        SaveTime();
         nameInput.classList.toggle("green");
-        window.location.replace("optionsPages/options.html");
+
         var relapses = ["✨ When you quit: " + new Date()]; //Creating and saving an item  when the user starts using the web app so this localStorage value will never be null in the main app and I wont have to check if it is null or not...
         localStorage.setItem("relapsesArray",  JSON.stringify(relapses));
+
+        window.location.replace("optionsPages/options.html");
         //THE USER HAS SUBMITTED TEXT, REDIRECTING THEM
     } else {
 
@@ -43,3 +45,26 @@ btn.addEventListener("click", (e) => {
         //WARNING THE USER TO ENTER A VALUE
     }
 })
+
+function SaveTime(){
+    //THIS FUNCTION CALCULATES AND SAVES WHAT TIME OF DAY IT IS (MORNING, AFTERNOON, ETC)
+
+    var timesArray; 
+    var date = new Date();
+
+    var currentH = date.getHours();
+    if (currentH >= 0) {
+        //MORNING  
+        timesArray = ["morning"] 
+    }
+    if (currentH >= 12) {
+        //AFTERNOON
+        timesArray = ["afternoon"] 
+    }
+    if (currentH >= 18) {
+        //NIGHT
+        timesArray = ["night"] 
+    }
+
+    localStorage.setItem("timesArray", JSON.stringify(timesArray));
+}
