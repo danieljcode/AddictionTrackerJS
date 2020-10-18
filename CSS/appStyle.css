@@ -19,10 +19,6 @@ body {
     border-radius: 5px;
 }
 
-.col-6 {
-    height: 20em;
-}
-
 .deleteBtn {
     margin-top: 30px;
     margin-bottom: 5px;
@@ -45,7 +41,7 @@ body {
 
 #clock {
     border: 2px solid rgb(187, 187, 187);
-    width: 75%;
+    width: 35%;
     font-size: 40pt;
     margin-left: auto;
     margin-right: auto;
@@ -107,6 +103,10 @@ body {
     position: fixed;
     left: 0px;
     
+}
+
+.chart{
+    width: 100%;
 }
 
 @media(max-width: 700px) {

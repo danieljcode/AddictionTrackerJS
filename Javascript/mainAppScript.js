@@ -155,7 +155,7 @@ function DisplayRelapses() {
     RemoveAllChildNodes(relapseDisplay);
 
 
-    for (let i = 0; i < relapses.length; i++) {
+    for (let i = (relapses.length - 5); i < relapses.length; i++) { //ONLY SHOWING THE LAST 5 RELAPSES
         console.log(relapses[i]);
 
         var currentText = relapses[i];
@@ -167,8 +167,6 @@ function DisplayRelapses() {
         relapseDisplay.appendChild(newRelapse);
 
     }
-
-
 }
 
 

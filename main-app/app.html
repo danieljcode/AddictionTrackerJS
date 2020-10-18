@@ -22,11 +22,24 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6 col-12-sm cutout">
+            <div class="col-12 col-12-sm cutout">
                 <h2>All you have to do is stay present in the moment and don't relapse now</h2>
                 <h1 id="clock">--:--:-- AM/PM</h1>
             </div>
 
+
+            <div class="col-12 col-12-sm cutout">
+                <h1 style="font-size: 30pt;">Days since your last relapse:</h1>
+                <h1 id="daysSince" style="font-size: 50pt;"></h1>
+            </div>
+
+            <div class="col-6 col-12-sm cutout">
+                <h1>When your most vulnerable to relapses:</h1>
+                <canvas id="myChart" width="400" height="400" class="chart"></canvas>
+            </div>
+
+                <div class="col-6 col-12-sm cutout" id="relapseDisplay"></div>
+                
             <div class="col-6 col-12-sm cutout" id="goal">
                 <h2>Current goal:</h2>
                 <h1 id="goalDisplay">No goal - <a href="setGoal.html">Set a goal</a></h1>
@@ -34,17 +47,6 @@
 
                 <button class="deleteBtn" onclick="localStorage.removeItem('currentGoal'); window.location.reload()"
                     id="delGoalBtn">DELETE GOAL</button>
-            </div>
-
-            <div class="col-12 col-12-sm cutout">
-                <h1 style="font-size: 30pt;">Days since your last relapse:</h1>
-                <h1 id="daysSince" style="font-size: 50pt;"></h1>
-            </div>
-            <div class="col-12 col-12-sm" id="relapseDisplay"></div>
-
-            <div class="col-12 col-12-sm cutout">
-                <h1>When your most vulnerable to relapses:</h1>
-                <canvas id="myChart" width="400" height="400" class="chart"></canvas>
             </div>
             
         </div>
