@@ -15,7 +15,8 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
     opacity: 1;
     box-shadow: 5px 0px 30px 0px rgba(0, 0, 0, 0.5);
-    overflow: hidden
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .col-6 {
@@ -39,11 +40,12 @@ body {
 
 .deleteBtn:hover {
     color: red;
+    background-color: black;
 }
 
 #clock {
-    border: 2px solid gray;
-    width: 55%;
+    border: 2px solid rgb(187, 187, 187);
+    width: 75%;
     font-size: 40pt;
     margin-left: auto;
     margin-right: auto;
@@ -52,7 +54,7 @@ body {
 }
 
 #goal {
-    background-color: #FFB354;
+    background-color: #45c8fc;
     color: white !important;
     box-shadow: none;
 }
@@ -64,21 +66,42 @@ body {
     padding: 8px;
     width: 15%;
     left: 15px;
+
+    border: none;
+    border-radius: 4px;
+    background-color: #dedede;
+    font-weight: bold;
 }
 
 #fixedBtn1 {
     bottom: 20px;
+
+}
+
+#fixedBtn1:hover {
+    color: orange;
+    background-color: black;
 }
 
 #fixedBtn2 {
     bottom: 70px;
 }
 
-#fixedBtn3 {
-    bottom: 120px;
+#fixedBtn2:hover {
+    color: orange;
+    background-color: black;
 }
 
-@media(max-width: 500px) {
+#fixedBtn3 {
+    bottom: 120px;
+    color: crimson;
+}
+
+#fixedBtn3:hover {
+    background-color: black;
+}
+
+@media(max-width: 700px) {
     #clock {
         width: 80%;
     }

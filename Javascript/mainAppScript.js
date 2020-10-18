@@ -105,7 +105,7 @@ function CheckForGoal() {
 
 }
 
-function Relapse(){
+function Relapse() {
 
     var now = new Date();
     var day = now.getDate();
@@ -114,9 +114,9 @@ function Relapse(){
 
     var time;
 
-    if(now.getMinutes() < 10){
+    if (now.getMinutes() < 10) {
         time = `${now.getHours()}:0${now.getMinutes()}` //ADDING A ZERO BEFORE THE MINUTES IF IT'S LESS THAN TEN
-    }else{
+    } else {
         time = `${now.getHours()}:${now.getMinutes()}`
     }
 
@@ -127,38 +127,52 @@ function Relapse(){
         time: time
     }));
 
+    localStorage.removeItem("currentGoal");
+
 }
 
 
-function DateCalculation(){
-    moment().format();
+function DateCalculation() {
 
-    var lastRelapseDate = JSON.parse(localStorage.getItem("lastRelapse")).date;
-    var goalSet = JSON.parse(localStorage.getItem("currentGoal")).dateStartedShort;
+    try {
 
-    var now = new Date();
-    var day = now.getDate();
-    var month = now.getMonth() + 1;
-    var year = now.getFullYear();
+        moment().format();
 
-    var a = moment(lastRelapseDate,'D/M/YYYY');
-    var b = moment(`${day}/${month}/${year}`,'D/M/YYYY');
-    var diffDays = b.diff(a, 'days');
-    daysSinceDisplay.textContent = diffDays;
+        var now = new Date();
+        var day = now.getDate();
+        var month = now.getMonth() + 1;
+        var year = now.getFullYear();
+
+        //ALL STUFF TO DO WITH RELAPSE AND DATE
+        if (localStorage.getItem("lastRelapse")) {
+            var lastRelapseDate = JSON.parse(localStorage.getItem("lastRelapse")).date;
+
+            var a = moment(lastRelapseDate, 'D/M/YYYY');
+            var b = moment(`${day}/${month}/${year}`, 'D/M/YYYY');
+            var diffDays = b.diff(a, 'days');
+            daysSinceDisplay.textContent = diffDays;
+        }
+
+        //ALL STUFF RELEATED TO THE GOAL DATES
+        if (localStorage.getItem("currentGoal")) {
+            var goalSet = JSON.parse(localStorage.getItem("currentGoal")).dateStartedShort;
+
+            var a2 = moment(goalSet, 'D/M/YYYY/');
+            var b2 = moment(`${day}/${month}/${year}`, 'D/M/YYYY');
+            var diffDays2 = b2.diff(a2, 'days');
+            console.log("Days progressed in current goal: " + diffDays2);
+
+            if (diffDays2 >= JSON.parse(localStorage.getItem("currentGoal")).duration) {
+                console.log("GOAL UP");
+                //THE GOAL DURATION HAS FINISHED
+            }
+
+        }
 
 
-    var a2 = moment(goalSet,'D/M/YYYY/');
-    var b2 = moment(`${day}/${month}/${year}`,'D/M/YYYY');
-    var diffDays = b2.diff(a2, 'days');
-    console.log("Days left in current goal: " +diffDays);
-    
-    Date.prototype.addDays = function(days) {
-        var date = new Date(this.valueOf());
-        date.setDate(date.getDate() + days);
-        return date;
+
+    } catch {
+        console.log("FATAL ERROR OCCURRED");
     }
-    
-    var date = new Date(JSON.parse(localStorage.getItem("currentGoal")).dateStarted);
-    
-    console.log("Goal ends: "+date.addDays(+(JSON.parse(localStorage.getItem("currentGoal")).duration)));
+
 }
