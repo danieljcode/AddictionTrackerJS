@@ -27,7 +27,13 @@ nameInput.addEventListener("change", () => {
 
 const btn = document.querySelector("button");
 btn.addEventListener("click", (e) => {
+    var now = new Date();
+    var day = now.getDate();
+    var month = now.getMonth() + 1;
+    var year = now.getFullYear();
 
+    var time;
+    
     e.preventDefault();
 
     if (nameInput.value) {
@@ -36,6 +42,10 @@ btn.addEventListener("click", (e) => {
 
         var relapses = ["✨ When you quit: " + new Date()]; //Creating and saving an item  when the user starts using the web app so this localStorage value will never be null in the main app and I wont have to check if it is null or not...
         localStorage.setItem("relapsesArray",  JSON.stringify(relapses));
+        localStorage.setItem("lastRelapse", JSON.stringify({
+            date: `${day}/${month}/${year}`,
+            time: time
+        }));
 
         window.location.replace("optionsPages/options.html");
         //THE USER HAS SUBMITTED TEXT, REDIRECTING THEM

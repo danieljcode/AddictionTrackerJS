@@ -41,6 +41,12 @@
                 <h1 id="daysSince" style="font-size: 50pt;"></h1>
             </div>
             <div class="col-12 col-12-sm" id="relapseDisplay"></div>
+
+            <div class="col-12 col-12-sm cutout">
+                <h1>When your most vulnerable to relapses:</h1>
+                <canvas id="myChart" width="400" height="400" class="chart"></canvas>
+            </div>
+            
         </div>
     </div>
     </div>
@@ -53,16 +59,15 @@
     </div>
     </div>
 
-    <button id="fixedBtn2" onclick="Relapse(); window.location.reload()">Log a relapse</button>
+    <button id="fixedBtn2" onclick="Relapse();">Log a relapse</button>
     <button id="fixedBtn1">Delete data</button>
     <button id="fixedBtn3">PANIC BUTTON</button>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
     <script src="https://kit.fontawesome.com/42575f5eb5.js" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script src="../Javascript/mainAppScript.js"></script>
 </body>
 
