@@ -6,6 +6,10 @@ slider.addEventListener("change", (event) => {
     //SHOW THE BACK BTN
     document.getElementById("back").style.display = "block";
 
+    //SAVING THE MOOD
+    localStorage.setItem("lastRelapseMOOD", slider.value);
+
+
     if (slider.value == 5) {
         console.log("User has set their mood to despairing...");
         //Show the user advice on low moods...

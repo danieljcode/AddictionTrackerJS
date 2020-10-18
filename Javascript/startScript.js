@@ -34,6 +34,8 @@ btn.addEventListener("click", (e) => {
 
         nameInput.classList.toggle("green");
         window.location.replace("optionsPages/options.html");
+        var relapses = ["✨ When you quit: " + new Date()]; //Creating and saving an item  when the user starts using the web app so this localStorage value will never be null in the main app and I wont have to check if it is null or not...
+        localStorage.setItem("relapsesArray",  JSON.stringify(relapses));
         //THE USER HAS SUBMITTED TEXT, REDIRECTING THEM
     } else {
 

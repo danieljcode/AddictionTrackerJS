@@ -4,10 +4,12 @@ const greetingTwoDisplay = document.getElementById("GreetingTwo");
 const goalDisplay = document.getElementById("goalDisplay");
 const goalDuration = document.getElementById("goalDuration");
 const daysSinceDisplay = document.getElementById("daysSince")
+const relapseDisplay = document.getElementById("relapseDisplay");
 
 //BUTTONS
 const deleteGoalButton = document.getElementById("delGoalBtn");
 
+var relapses = [];
 
 DateCalculation();
 ShowGreeting();
@@ -107,6 +109,14 @@ function CheckForGoal() {
 
 function Relapse() {
 
+    
+    relapses = JSON.parse(localStorage.getItem("relapsesArray"));
+    var relapseNumber = (relapses.length);
+
+    relapses.push("🔥 Relapse " + relapseNumber + ": " + new Date());
+    localStorage.setItem("relapsesArray",  JSON.stringify(relapses));
+
+
     var now = new Date();
     var day = now.getDate();
     var month = now.getMonth() + 1;
@@ -128,6 +138,33 @@ function Relapse() {
     }));
 
     localStorage.removeItem("currentGoal");
+    DisplayRelapses();
+}
+
+function RemoveAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+function DisplayRelapses(){
+    relapses = JSON.parse(localStorage.getItem("relapsesArray"));
+    RemoveAllChildNodes(relapseDisplay);
+
+
+    for (let i = 0; i < relapses.length; i++) {
+        console.log(relapses[i]);
+
+        var currentText = relapses[i];
+
+        var newRelapse = document.createElement("h3");
+        newRelapse.className = "relapse";
+        newRelapse.innerHTML = currentText;
+        
+        relapseDisplay.appendChild(newRelapse);
+
+      }
+
 
 }
 
@@ -153,7 +190,7 @@ function DateCalculation() {
             daysSinceDisplay.textContent = diffDays;
         }
 
-        //ALL STUFF RELEATED TO THE GOAL DATES
+        //ALL STUFF RELATED TO THE GOAL DATES
         if (localStorage.getItem("currentGoal")) {
             var goalSet = JSON.parse(localStorage.getItem("currentGoal")).dateStartedShort;
 
