@@ -101,18 +101,6 @@ body {
     background-color: black;
 }
 
-.top{
-    height: 60px;
-    width: 100%;
-    text-align: left;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    background-color: #1E3D58;
-    overflow: hidden;
-    vertical-align: center;
-    padding: 3px;
-}
-
 .col-2{
     background-color: white;
     height: 100vh;
