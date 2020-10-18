@@ -2,7 +2,7 @@ body {
     margin: 0px;
     display: flex;
     flex-direction: column;
-
+    overflow-x: hidden;
     height: 100vh;
 
     background-color: #54a0ff;
@@ -101,6 +101,26 @@ body {
     background-color: black;
 }
 
+.top{
+    height: 60px;
+    width: 100%;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    background-color: #1E3D58;
+    overflow: hidden;
+    vertical-align: center;
+    padding: 3px;
+}
+
+.col-2{
+    background-color: white;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    
+}
+
 @media(max-width: 700px) {
     #clock {
         width: 80%;
@@ -109,6 +129,9 @@ body {
     #fixedBtn1,
     #fixedBtn2,
     #fixedBtn3 {
-        width: 93%;
+        display: block;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

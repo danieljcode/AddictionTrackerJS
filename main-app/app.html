@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
 
     <title>Addiction Tracker V1.01 - danieljcode</title>
 </head>
+
 <body onload="CheckForSavedData()">
 
-    
     <div class="container">
+
         <div class="row">
             <div class="col-12 col-12-sm cutout">
                 <h1 id="GreetingOne">Welcome</h1>
@@ -30,19 +32,24 @@
                 <h1 id="goalDisplay">No goal - <a href="setGoal.html">Set a goal</a></h1>
                 <h1 id="goalDuration"></h1>
 
-                <button class="deleteBtn" onclick="localStorage.removeItem('currentGoal'); window.location.reload()" id="delGoalBtn">DELETE GOAL</button>
+                <button class="deleteBtn" onclick="localStorage.removeItem('currentGoal'); window.location.reload()"
+                    id="delGoalBtn">DELETE GOAL</button>
             </div>
 
             <div class="col-12 col-12-sm cutout">
                 <h1 style="font-size: 30pt;">Days since your last relapse:</h1>
                 <h1 id="daysSince" style="font-size: 50pt;"></h1>
             </div>
-            <div class="col-12 col-12-sm cutout">
-              <h1>Past setbacks: </h1>
-            </div>
-
-            
         </div>
+    </div>
+    </div>
+
+
+
+
+    <div class="container">
+
+    </div>
     </div>
 
     <button id="fixedBtn2" onclick="Relapse(); window.location.reload()">Log a relapse</button>
@@ -52,7 +59,10 @@
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
     <script src="https://kit.fontawesome.com/42575f5eb5.js" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
     <script src="../Javascript/mainAppScript.js"></script>
 </body>
+
 </html>
