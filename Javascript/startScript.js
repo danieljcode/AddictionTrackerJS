@@ -5,7 +5,7 @@ function CheckData() {
 
     if (localStorage.getItem("username")) {
         //USER HAS USED APP BEFORE, REDIRECT!
-        window.location.replace("../main-app/app.html");
+        window.location.replace("/AddictionTrackerJS/main-app/app.html");
     } else {
         //THE USER HAS NOT USED THE APP BEFORE, KEEP THEM ON THIS PAGE
     }
