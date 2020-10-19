@@ -34,11 +34,16 @@
             </div>
 
             <div class="col-6 col-12-sm cutout">
-                <h1>When your most vulnerable to relapses:</h1>
-                <canvas id="myChart" width="400" height="400" class="chart"></canvas>
+                <h1>When your most vulnerable:</h1>
+                <canvas id="chart1" width="400" height="400" class="chart"></canvas>
             </div>
 
-                <div class="col-6 col-12-sm cutout" id="relapseDisplay"></div>
+            <div class="col-6 col-12-sm cutout">
+                <h1>Your most recent relapses:</h1>
+                <div class="" id="relapseDisplay"></div>
+            </div>
+
+
                 
             <div class="col-6 col-12-sm cutout" id="goal">
                 <h2>Current goal:</h2>
@@ -47,6 +52,11 @@
 
                 <button class="deleteBtn" onclick="localStorage.removeItem('currentGoal'); window.location.reload()"
                     id="delGoalBtn">DELETE GOAL</button>
+            </div>
+
+            <div class="col-12 cutout">
+                <h1>Your moods when you relapsed: </h1>
+                <canvas id="chart2" width="100px" height="100px" class="chart"></canvas>
             </div>
             
         </div>

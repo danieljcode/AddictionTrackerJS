@@ -47,6 +47,9 @@ btn.addEventListener("click", (e) => {
             time: time
         }));
 
+        var moods = ["INITIALIZING THE ARRAY BEFORE THE MAIN APP STARTS"];
+        localStorage.setItem("moods", JSON.stringify(moods)); //SETTING THIS TO A VALUE BEFORE THE MAIN APP STARTS SO THE LOCALSTORAGE ARRAY WILL NEVER BE UNDEFINED IN THE MAIN APP
+
         window.location.replace("optionsPages/options.html");
         //THE USER HAS SUBMITTED TEXT, REDIRECTING THEM
     } else {

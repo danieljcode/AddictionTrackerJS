@@ -15,6 +15,7 @@ DateCalculation();
 ShowGreeting();
 ChartTimes();
 DisplayRelapses();
+ChartMoods();
 setInterval("updateClock()", 1000);
 
 
@@ -155,7 +156,7 @@ function DisplayRelapses() {
     RemoveAllChildNodes(relapseDisplay);
 
 
-    for (let i = (relapses.length - 5); i < relapses.length; i++) { //ONLY SHOWING THE LAST 5 RELAPSES
+    for (let i = (relapses.length - 3); i < relapses.length; i++) { //ONLY SHOWING THE LAST 3 RELAPSES
         console.log(relapses[i]);
 
         var currentText = relapses[i];
@@ -222,24 +223,23 @@ function ChartTimes() {
     var nights = timesArray.filter((time) => {
         return time == "night";
     })
-    console.log(nights);
+    //console.log(nights);
 
 
     var afternoons = timesArray.filter((time) => {
         return time == "afternoon";
     })
-    console.log(afternoons);
+    //console.log(afternoons);
 
 
     var mornings = timesArray.filter((time) => {
         return time == "morning";
     })
-    console.log(mornings);
+    //console.log(mornings);
 
 
-
-    var ctx = document.getElementById('myChart');
-    var myChart = new Chart(ctx, {
+    var ctx = document.getElementById('chart1');
+    var firstChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: ["Morning", "Afternoon", "Night"],
@@ -275,4 +275,72 @@ function ChartTimes() {
             }
         }
     });
+}
+
+
+function ChartMoods(){
+
+    var moodsArray = JSON.parse(localStorage.getItem("moods"));
+    console.log(moodsArray);
+
+    var ones = moodsArray.filter((one)=>{
+        return one == 1;
+
+    })
+    var twos = moodsArray.filter((two)=>{
+        return two == 2;
+
+    })
+    var threes = moodsArray.filter((three)=>{
+        return three == 3;
+
+    })
+    var fours = moodsArray.filter((four)=>{
+        return four == 4;
+
+    })
+    var fives = moodsArray.filter((five)=>{
+        return five == 5;
+
+    })
+
+
+    var ctx = document.getElementById('chart2');
+    var secondChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["Brilliant", "Happy", "Meh", "Sad", "Despairing"],
+            datasets: [{
+                label: '# of Votes',
+                data: [ones.length, twos.length, threes.length, fours.length, fives.length],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
 }
