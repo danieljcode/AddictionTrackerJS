@@ -280,8 +280,19 @@ function ChartTimes() {
 
 function ChartMoods(){
 
+    var ctx = document.getElementById('chart2');
+
     var moodsArray = JSON.parse(localStorage.getItem("moods"));
-    console.log(moodsArray);
+
+
+    if(moodsArray.length < 2){ //IF THE ONLY ITEM IN THE MOODS ARRAY IS THE DEFAULT ONE CREATED THE FIRST TIME THE APP IS STARTED, HIDE THE DISPLAY!
+        ctx.style.display = "none";
+        document.getElementById("infoMsg").style.display = "block";
+        return;
+    }else{
+        ctx.style.display = "block";
+        document.getElementById("infoMsg").style.display = "none"; //Hiding the info msg
+    }
 
     var ones = moodsArray.filter((one)=>{
         return one == 1;
@@ -304,8 +315,6 @@ function ChartMoods(){
 
     })
 
-
-    var ctx = document.getElementById('chart2');
     var secondChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -342,5 +351,16 @@ function ChartMoods(){
             }
         }
     });
+
+}
+
+function DeleteData(){
+
+    var r = confirm("Are you sure you want to erase all stored data?");
+    if (r == true) {
+      localStorage.clear();
+      window.location.reload();
+    } else {
+    } 
 
 }

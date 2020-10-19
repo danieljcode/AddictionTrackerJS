@@ -56,6 +56,7 @@
 
             <div class="col-12 cutout">
                 <h1>Your moods when you relapsed: </h1>
+                <h2 id="infoMsg">Sorry, not enough data to display, this section will update the more relapses you log! <span class="heart">❤</span></h2>
                 <canvas id="chart2" width="100px" height="100px" class="chart"></canvas>
             </div>
             
@@ -64,15 +65,14 @@
     </div>
 
 
-
-
-    <div class="container">
-
-    </div>
-    </div>
+    <style>
+        .heart {
+            color: #e25555;
+        }
+    </style>
 
     <button id="fixedBtn2" onclick="Relapse();">Log a relapse</button>
-    <button id="fixedBtn1">Delete data</button>
+    <button id="fixedBtn1" onclick="DeleteData()">Delete data</button>
     <button id="fixedBtn3">PANIC BUTTON</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
