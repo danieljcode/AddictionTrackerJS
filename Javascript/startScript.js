@@ -5,9 +5,7 @@ function CheckData() {
 
     if (localStorage.getItem("username")) {
         //USER HAS USED APP BEFORE, REDIRECT!
-        window.location.replace("/AddictionTrackerJS/main-app/app.html");
-        //On the github pages hosting (danieljcode.github.io/AddictionTrackerJs) this has to have the /AddicitonTrackerJS/main-app... for the redirects to work, however if you are playing around with this site on your local PC remove the /AddictionTrackerJS/
-        //and instead use "/main-app/app.html"...
+        window.location.replace("/main-app/app.html");
     } else {
         //THE USER HAS NOT USED THE APP BEFORE, KEEP THEM ON THIS PAGE
     }
