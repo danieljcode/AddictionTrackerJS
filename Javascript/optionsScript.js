@@ -1,9 +1,3 @@
-new TypeIt("#message", {
-  speed: 75,
-  waitUntilVisible: true,
-  cursor: false
-}).go();
-
 const nextBtn = document.getElementById("nextBtn");
 const option1 = document.getElementById("substance");
 const option2 = document.getElementById("behavior");

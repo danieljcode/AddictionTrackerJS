@@ -55,7 +55,7 @@ body{
 
 
 .btn1{
-    width: 90px;
+    width: 100px;
     padding-top: 10px;
     padding-bottom: 8px;
     padding-left: 35px;
@@ -84,7 +84,7 @@ body{
     box-shadow: 5px 0px 30px 0px rgba(0, 0, 0, 0.5);
     text-decoration: none;
     display: inline-block;
-    font-size: 14pt;
+    font-size: 13pt;
 }
 
 .btn1:hover, .btn2:hover{
