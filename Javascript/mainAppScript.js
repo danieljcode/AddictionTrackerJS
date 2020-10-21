@@ -268,49 +268,50 @@ function ChartTimes() {
         options: {
             scales: {
                 yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
+                    display: false
                 }]
+            },
+            layout:{
+                padding: 10
             }
         }
     });
 }
 
 
-function ChartMoods(){
+function ChartMoods() {
 
     var ctx = document.getElementById('chart2');
 
     var moodsArray = JSON.parse(localStorage.getItem("moods"));
 
 
-    if(moodsArray.length < 2){ //IF THE ONLY ITEM IN THE MOODS ARRAY IS THE DEFAULT ONE CREATED THE FIRST TIME THE APP IS STARTED, HIDE THE DISPLAY!
+    if (moodsArray.length < 2) { //IF THE ONLY ITEM IN THE MOODS ARRAY IS THE DEFAULT ONE CREATED THE FIRST TIME THE APP IS STARTED, HIDE THE DISPLAY!
         ctx.style.display = "none";
         document.getElementById("infoMsg").style.display = "block";
         return;
-    }else{
+    } else {
         ctx.style.display = "block";
         document.getElementById("infoMsg").style.display = "none"; //Hiding the info msg
     }
 
-    var ones = moodsArray.filter((one)=>{
+    var ones = moodsArray.filter((one) => {
         return one == 1;
 
     })
-    var twos = moodsArray.filter((two)=>{
+    var twos = moodsArray.filter((two) => {
         return two == 2;
 
     })
-    var threes = moodsArray.filter((three)=>{
+    var threes = moodsArray.filter((three) => {
         return three == 3;
 
     })
-    var fours = moodsArray.filter((four)=>{
+    var fours = moodsArray.filter((four) => {
         return four == 4;
 
     })
-    var fives = moodsArray.filter((five)=>{
+    var fives = moodsArray.filter((five) => {
         return five == 5;
 
     })
@@ -344,23 +345,23 @@ function ChartMoods(){
         options: {
             scales: {
                 yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
+                    display: false
                 }]
             }
+        },
+        layout:{
+            padding: 10
         }
     });
 
 }
 
-function DeleteData(){
+function DeleteData() {
 
-    var r = confirm("Are you sure you want to erase all stored data?");
+    var r = confirm("Are you sure you want to erase all app data stored in local storage");
     if (r == true) {
-      localStorage.clear();
-      window.location.reload();
-    } else {
-    } 
+        localStorage.clear();
+        window.location.reload();
+    }
 
 }

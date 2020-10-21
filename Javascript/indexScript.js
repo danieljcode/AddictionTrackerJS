@@ -11,7 +11,7 @@ new TypeIt("#message", {
         speed: 60,
         waitUntilVisible: true,
         cursor: true
-      }).type("Welcome to Addiction Tracker V1.01! ")
+      }).type("Welcome to Trackr V1.01! ")
       .type("An source", {delay: 100})
       .move(-6, {speed: 25, delay: 100})
       .type('open ')
