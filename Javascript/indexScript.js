@@ -11,13 +11,12 @@ new TypeIt("#message", {
         speed: 60,
         waitUntilVisible: true,
         cursor: true
-      }).type("Welcome to Trackr V1.01! ")
+      }).type("Welcome to Trackr ")
       .type("An source", {delay: 100})
       .move(-6, {speed: 25, delay: 100})
       .type('open ')
       .move("END", {delay: 300})
-      .type(" web app", {delay: 150})
-      .type(" built using Javascript.")
+      .type(" relapse tracker", {delay: 150})
       .go();
 
   }, 2100)

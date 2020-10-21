@@ -19,6 +19,10 @@ body {
     border-radius: 5px;
 }
 
+.two{
+    height: 20em;
+}
+
 .deleteBtn {
     margin-top: 30px;
     margin-bottom: 5px;
@@ -41,7 +45,7 @@ body {
 
 #clock {
     border: 2px solid rgb(187, 187, 187);
-    width: 35%;
+    width: 40%;
     font-size: 40pt;
     margin-left: auto;
     margin-right: auto;

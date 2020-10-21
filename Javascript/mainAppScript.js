@@ -204,6 +204,8 @@ function DateCalculation() {
             if (diffDays2 >= JSON.parse(localStorage.getItem("currentGoal")).duration) {
                 console.log("GOAL UP");
                 //THE GOAL DURATION HAS FINISHED
+
+                window.location.replace("/main-app/goalUp.html")
             }
 
         }
